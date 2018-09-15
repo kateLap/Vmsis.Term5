@@ -30,7 +30,7 @@ namespace toks
         private void ButtonSend_Click(object sender, EventArgs e)
         {
             _chat.WriteToClient(SendTextBox.Text);
-            var user = "Me : ";
+            var user = "Me: ";
             ChatTextBox.Text += user + SendTextBox.Text;
             SendTextBox.Clear();
         }
@@ -78,7 +78,7 @@ namespace toks
         private void DataReceive(object sender, SerialDataReceivedEventArgs e)
         {
             string message = _chat.ReceiveMessage();
-            ChatTextBox.Text += message + Environment.NewLine;
+            ChatTextBox.Text += message;
         }
 
         private void ErrorReceive(object sender, SerialErrorReceivedEventArgs e)
